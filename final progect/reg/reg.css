@@ -45,11 +45,9 @@ main input {
     text-decoration: none;
     color: black;
 }
-
 .gap {
     height: 20px;
 }
-
 .input {
     padding: 10px;
     border-radius: 10px;

@@ -1,19 +1,19 @@
-function isInputFull(params) {
-    let allInputs = document.querySelectorAll('input')
-   return [...allInputs].every(input => input.value !== '')
+const users = [
+    {
+        name: "u1",
+        pass:"p1",
+    }
+]
+let user = user[0].name.value
+if(!localStorage.getItem('users')){
+    localStorage.setItem('users',JSON.stringify(users))
 }
 
-$('button').click(function (e) {
+const allinputs = document.querySelectorAll('input')
+const btn =document.querySelector(".submit")
+btn.addEventListener('click',function (e) {
     e.preventDefault()
-    isInputFull()
-})
-$('input').on('input',function () {
-    $('button').prop('disabled', !isInputFull())
-})
-const users = JSON.parse(localStorage.getItem('users'))
-$('button').click(function (e) {
-    e.preventDefault()
-if (users.some(user=>user.name === allInputs[0].value)) {
-    location.href="admin.html"
-} 
+   if (users.some(user => user.name == allinputs[0].value && user.pass == allinputs[1].value)) {
+    location.href= "../main/admin.html"
+   } 
 })
