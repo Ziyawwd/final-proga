@@ -4,3 +4,17 @@
     height: 30px;
     border-radius: 30px;
 }
+#logout {
+    display: none;
+}
+img{
+    width: 70%;
+}
+.size{
+    width: 100px;
+    height: 100px;
+    background: rgb(48, 48, 48);
+}
+.carousel {
+    align-items: center;
+}

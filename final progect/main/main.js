@@ -1,23 +1,23 @@
+const currentUsers = localStorage.getItem('currentUser')
 let user = document.querySelector('#user')
-let users = localStorage.getItem('users')
-let logout = document.querySelector('#logout')
-let login = document.querySelector('#login')
-let signin = document.querySelector('#signin')
-
-user.innerHTML = `<h1 id="user">your Accaunt:${users}</h1>`
-if (!user.innerText == `your Accaunt:`) {
-    logout.style.display = "inline"
-    login.style.display = "none"
-    signin.style.display = "none"
+user.innerHTML = `${currentUsers}`
+const logout = document.querySelector('#logout')
+const login = document.querySelector('#login')
+const logup = document.querySelector('#signin')
+if (!user == "") {
+    logout.style.display='inline'
+    login.style.display = 'none'
+    logup.style.display = 'none'
 } else {
-    logout.style.display = "none"
-    login.style.display = "inline"
-    signin.style.display = "inline"
+    logout.style.display = 'none'
+    login.style.display = 'inline'
+    logup.style.display = 'inline'
 }
-logout.addEventListener(click, function () {
-localStorage.setItem('users','')
-    logout.style.display = "none"
-    login.style.display = "inline"
-    signin.style.display = "inline"
-
+logout.addEventListener('click', function () {
+    localStorage.setItem('currentUser','')
+    localStorage.setItem('computers', '')
+    user.innerHTML=''
+    logout.style.display = 'none'
+    login.style.display = 'inline'
+    logup.style.display = 'inline'
 })
